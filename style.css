@@ -1,0 +1,246 @@
+
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+/* ROOT */
+
+:root {
+    --primary-very-dark-magenta: hsl(300, 43%, 22%);
+    --primary-soft-pink: hsl(333, 80%, 67%);
+
+    --neutral-dark-grayish-magenta: hsl(303, 10%, 53%);
+    --neutral-light-grayish-magenta: hsl(300, 24%, 96%);
+    --neutral-white: hsl(0, 0%, 100%);
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GENERIC STYLES */
+
+body {
+    font-size: 15px;
+    font-family: "League Spartan", system-ui;
+    background-color: var(--neutral-white);
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-position: top left, bottom right;
+    background-repeat: no-repeat, no-repeat;
+} 
+
+.card-container {
+    width: 21.8em;
+    margin: 0 auto;  
+}
+
+/* PRODUCT INFO DIV */
+
+h1 {
+    font-size: 2.6em;
+    font-weight: 700;
+    color: var(--primary-very-dark-magenta);
+    text-align: center;
+    margin-top: 2.12em;
+    margin-bottom: 0.57em;
+    line-height: 0.83em;
+}
+
+.product-info p {
+    font-size: 1.18em;
+    font-weight: 500;
+    color: var(--neutral-dark-grayish-magenta);
+    text-align: center;
+    line-height: 1.358em;
+}
+
+/* PRODUCT RATINGS DIV */
+
+.product-ratings {
+    font-size: 1.16em;
+    font-weight: 700;
+    color: var(--primary-very-dark-magenta);
+    margin-top: 2.28em;
+}
+
+.ratings-container {
+    height: 4.48em;
+    padding: 0.8em;
+    margin-bottom: 0.9em;
+    border-radius: 0.3em;
+    background-color: var(--neutral-light-grayish-magenta);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.besttech {
+    margin-bottom: 2.8em;
+}
+
+/* PRODUCT CUSTOMER TESTIMONIALS */
+
+.product-customer-testimonials {
+    margin-top: 1.06em;
+    padding: 2.65em 2.1em 2.1em 2.1em;
+    background-color: var(--primary-very-dark-magenta);
+    border-radius: 0.6em;
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+}
+
+.customer-info img {
+    border-radius: 50%;
+    width: 2.7em;
+    margin-right: 1.5em;
+}
+
+.customer {
+    height: 2.4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.customer-name {
+    color: var(--neutral-white);
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+.customer-status {
+    color: var(--primary-soft-pink);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.testimonials {
+    color: var(--neutral-white);
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 1.33em;
+    margin-top: 1.65em;
+
+}
+
+/* FOOTER */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  /* GRID LAYOUT */
+
+  .card-container {
+    display: grid;
+  }
+
+  /* MEDIA QUERIES */
+
+  @media screen and (min-width: 1150px) {
+    body {
+        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-position: 0vh 0vw,  106vh 2vw;
+    }
+
+    .card-container {
+        width: 74em;
+        height: 46.8em;
+        grid-template-rows: 59.5% 39.5%;
+        grid-template-areas: 
+            "product-info product-ratings"
+            "testimonials testimonials";
+    }
+
+    /* PRODUCT INFO DIV */
+
+    .product-info {
+        grid-area: product-info;
+        width: 30em; 
+    }
+
+    .product-info h1 {
+        font-size: 3.7em;
+        font-weight: 700;
+        text-align: left;
+        letter-spacing: -0.04em;
+    }
+
+    .product-info p {
+        text-align: left;
+    }
+
+    /* PRODUCT RATINGS DIV */
+
+    .product-ratings {
+        grid-area: product-ratings ;
+        margin-top: 8.4em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ratings-container {
+        width: 25.4em;
+        height: 3.1em;
+        display: flex;
+        flex-direction: row;  
+    }
+    
+    .stars {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    .stars img {
+        margin-right: 0.15em;
+    }
+
+    .report-guru {
+        align-self: center;
+    }
+
+    .besttech {
+        align-self: flex-end;
+    }
+
+    /* PRODUCT CUSTOMER TESTIMONIALS */
+
+    .testimonials-container {
+        height: 19em;
+        grid-area: testimonials;
+        gap: 2.3em;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .product-customer-testimonials {
+        width: 23.2em;
+        height: 15.7em;
+    }
+
+    .irene {
+        align-self: center;
+    }
+
+    .anne {
+        align-self: flex-end;
+    }
+  }
+
+  @media screen and (max-width: 356px) {
+    .card-container {
+        width: 80%;
+    } 
+  }
